@@ -6,24 +6,29 @@ export default function Textform(props) {
         console.log("Uppercase was clicked" + text)
         let newText=text.toUpperCase();
         setText(newText)
+        document.title= 'Newutiles-Uppercased'
     }
     const handlelowClick =()=>{
         console.log("Uppercase was clicked" + text)
         let newText=text.toLowerCase();
         setText(newText)
+        document.title= 'Newutiles-lowercased'
     }
     const handleclear =()=>{
         console.log("Uppercase was clicked" + text)
         let newText=("");
         setText(newText)
+        document.title= 'Newutiles'
     }
 
     const handleCopy = () => {
         var text = document.getElementById("myBox"); text.select(); navigator.clipboard.writeText(text.value);
+        document.title= 'Newutiles-copied'
     }
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        document.title= 'Newutiles-space removed'
     }
         
   /*  const speak = () => {
@@ -45,7 +50,7 @@ export default function Textform(props) {
         <h1 >{props.heading}</h1>
         <div className="mb-4" >
            
-            <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="5"></textarea>
+            <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="5" ></textarea>
         </div>
         <button className="btn btn-success mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
         <button className="btn btn-success mx-1" onClick={handlelowClick}>Convert to lowercase</button>
